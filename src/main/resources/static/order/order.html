@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理</title>
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/order.css" rel="stylesheet">
+    <link href="css/table.css" rel="stylesheet">
+    <link href="css/popup.css" rel="stylesheet">
+    <script src="js/popup.js"></script>
+    <script src="js/sortTable.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/util.js"></script>
+</head>
+
+<body>
+    <section id="sidebar">
+        <div class="white-label">
+            <p>订单管理系统</p>
+        </div>
+        <div id="sidebar-nav">
+            <ul>
+                <li><a href="home.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="process.html"><i class="fa fa-desktop"></i> 工序管理</a></li>
+                <li><a href="work.html"><i class="fa fa-usd"></i> 生产流程管理</a></li>
+                <li><a href="workProcess.html"><i class="fa fa-pencil-square-o"></i> 流程工序配置</a></li>
+                <li class="active"><a href="order.html"><i class="fa fa-line-chart"></i> 订单管理</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="content">
+        <div id="header">
+            <div class="header-nav">
+                <div class="menu-button">
+                    <i class="fa fa-navicon"></i>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li class="nav-profile">
+                            <div class="nav-profile-image">
+                                <div class="nav-profile-name" id="profile-name">admin</div>
+                                <div class="dropdown-content">
+                                    <a href="home.html">首页</a>
+                                    <a href="login.html" onclick="loginOut()">登出</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+
+            <div class="widget-box sample-widget">
+                <div class="widget-header">
+                    <h2>订单信息查询</h2>
+                </div>
+                <div class="widget-content">
+                    <div id="container">
+                        <div class="top-btn" style="margin-top: 10px;padding-bottom: 0">
+                            <button class="tag tag-light" onclick="loadOrder()">所有</button>
+                            <button class="tag tag-info el-tag--light" onclick="sortOrder('todayCreate')">今天创建</button>
+                            <button class="tag tag-warning el-tag--light"
+                                onclick="sortOrder('accordEnd?accord=0')">今天出货</button>
+                            <button class="tag tag-danger el-tag--light"
+                                onclick="sortOrder('accordEnd?accord=1')">明天出货</button>
+                            <button class="tag tag-success el-tag--light"
+                                onclick="sortOrder('accordEnd?accord=2')">后天出货</button>
+
+                            <button style="float: right" onclick="createAction()">创建订单</button>
+                        </div>
+                        <form id="queryForm">
+                            <input type="text" id="findId" value="" placeholder="序号" />
+                            <input type="text" id="findSerial" value="" placeholder="订单号" />
+                            <button type="button" onclick="queryOrder()">查询</button>
+                        </form>
+                        <table id="table" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width:8%">序号
+                                        <span class="caret-wrapper">
+                                            <i class="sort-caret ascending"></i>
+                                            <i class="sort-caret descending"></i>
+                                        </span>
+                                    </th>
+                                    <th style="width:10%">订单号
+                                        <span class="caret-wrapper">
+                                            <i class="sort-caret ascending"></i>
+                                            <i class="sort-caret descending"></i>
+                                        </span>
+                                    </th>
+                                    <th style="width:12%">生成流程
+                                        <span class="caret-wrapper">
+                                            <i class="sort-caret ascending"></i>
+                                            <i class="sort-caret descending"></i>
+                                        </span>
+                                    </th>
+                                    <th style="width:12%">创建时间</th>
+                                    <th style="width:12%">出货时间</th>
+                                    <th style="width:10%">查看</th>
+                                    <th style="width:10%">编辑</th>
+                                    <th style="width:16%">状态</th>
+                                    <th style="width:10%">删除</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderTbody" style="height: 55vh">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,77 @@
+.tag {
+    background-color: #ecf5ff;
+    /*display: inline-block;*/
+    height: 32px;
+    padding: 0 10px;
+    margin-left: 10px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #409eff;
+    border: 1px solid #d9ecff;
+    border-radius: 4px;
+    /*box-sizing: border-box;*/
+    white-space: nowrap;
+    outline: none;
+}
+
+.tag:focus, .tag:hover {
+    background: #409eff;
+    border-color: #409eff;
+    color: #fff;
+}
+
+.tag.tag-success {
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+    color: #67c23a;
+}
+
+.tag.tag-success:focus, .tag.tag-success:hover {
+    background: #67c23a;
+    border-color: #67c23a;
+    color: #fff;
+}
+
+.tag.tag-info {
+    background-color: #f4f4f5;
+    border-color: #e9e9eb;
+    color: #909399;
+}
+
+.tag.tag-info:focus, .tag.tag-info:hover {
+    background: #909399;
+    border-color: #909399;
+    color: #fff;
+}
+
+.tag.tag-warning {
+    background-color: #fdf6ec;
+    border-color: #faecd8;
+    color: #e6a23c;
+}
+
+.tag.tag-warning:focus, .tag.tag-warning:hover {
+    background: #e6a23c;
+    border-color: #e6a23c;
+    color: #fff;
+}
+
+.tag.tag-danger {
+    background-color: #fef0f0;
+    border-color: #fde2e2;
+    color: #f56c6c;
+}
+
+.tag.tag-danger:focus, .tag.tag-danger:hover {
+    background: #f56c6c;
+    border-color: #f56c6c;
+    color: #fff;
+}
+
+label {
+    width: 200px;
+}
+
+#queryForm input {
+    margin: 10px 15px;
+}

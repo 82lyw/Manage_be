@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  session:
+    store-type: jdbc
+  datasource:
+    url: "jdbc:mysql://localhost:3306/ordersystem?useSSL=false&serverTimezone=UTC"
+    username: root
+    password: 19990802lyw
+  resources:
+    static-locations: classpath:/static/order
+---
+manage:
+  authentication:
+    name: ${AUTHENTICATION_NAME:manage}
+    passwordField: ${PWD_FIELD:password}
+  secret:
+    token: ${TOKEN_SECRET:secret}
+    password: ${PWD_SALT:salt}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>生产流程管理</title>
+    <script src="js/popup.js"></script>
+    <link href="css/popup.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/work.css" rel="stylesheet">
+    <link href="css/table.css" rel="stylesheet">
+    <script src="js/work.js"></script>
+    <script src="js/sortTable.js"></script>
+    <script src="js/util.js"></script>
+</head>
+
+<body>
+    <section id="sidebar">
+        <div class="white-label">
+            <p>订单管理系统</p>
+        </div>
+        <div id="sidebar-nav">
+            <ul>
+                <li><a href="home.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="process.html"><i class="fa fa-desktop"></i> 工序管理</a></li>
+                <li class="active"><a href="work.html"><i class="fa fa-usd"></i> 生产流程管理</a></li>
+                <li><a href="workProcess.html"><i class="fa fa-pencil-square-o"></i> 流程工序配置</a></li>
+                <li><a href="order.html"><i class="fa fa-line-chart"></i> 订单管理</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="content">
+        <div id="header">
+            <div class="header-nav">
+                <div class="menu-button">
+                    <i class="fa fa-navicon"></i>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li class="nav-profile">
+                            <div class="nav-profile-image">
+                                <div class="nav-profile-name" id="profile-name">admin</div>
+                                <div class="dropdown-content">
+                                    <a href="home.html">首页</a>
+                                    <a href="login.html" onclick="loginOut()">登出</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="widget-box sample-widget">
+                <div class="widget-header">
+                    <h2>查询生产流程</h2>
+                </div>
+                <div class="top-btn">
+                    <form id="queryBox">
+                        <input type="text" name="id" placeholder="生产流程ID">
+                        <input type="text" name="name" placeholder="生产流程名称">
+                        <input type="text" name="comment" placeholder="生产流程备注">
+                        <input class="find-button" type="button" value="查询" onclick="query()" />
+                        <input id="create-button" class="find-button" type="button" value="新建" onclick="create()" />
+
+                    </form>
+                    <div class="query-result">
+                        <table id="table">
+                            <thead>
+                                <tr>
+                                    <th>流程ID
+                                        <span class="caret-wrapper">
+                                            <i class="sort-caret ascending"></i>
+                                            <i class="sort-caret descending"></i>
+                                        </span>
+                                    </th>
+                                    <th>生产流程名称</th>
+                                    <th>生产流程备注</th>
+                                    <th>创建时间
+                                        <span class="caret-wrapper">
+                                            <i class="sort-caret ascending"></i>
+                                            <i class="sort-caret descending"></i>
+                                        </span>
+                                    </th>
+                                    <th>更新时间
+                                        <span class="caret-wrapper">
+                                            <i class="sort-caret ascending"></i>
+                                            <i class="sort-caret descending"></i>
+                                        </span>
+                                    </th>
+                                    <th colspan="3">操作</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="query-result" style="height: 62vh;">
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
